@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosagone Insurance Agency</title>
+  <meta name="description" content="Rosagone Insurance Agency offers general and life insurance solutions in Kenya. Get motor, medical, property, business, life, education, and investment covers." />
+  <style>
+    :root{
+      --purple:#3b062b;
+      --purple2:#5c0f45;
+      --lavender:#f8eff8;
+      --pink:#fff3fb;
+      --gold:#d9b46a;
+      --text:#171217;
+      --muted:#6b5f68;
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--lavender);color:var(--text)}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1180px;margin:auto;padding:0 22px}
+    header{background:linear-gradient(135deg,var(--purple),var(--purple2));color:white;overflow:hidden;position:relative}
+    header:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.08);right:-90px;top:-120px}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;position:relative;z-index:1}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{height:54px;width:54px;border:1px solid rgba(255,255,255,.75);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-style:italic;font-size:20px}
+    .brand h1{font-family:Georgia,serif;letter-spacing:6px;font-size:20px;margin:0}
+    .brand p{font-size:11px;letter-spacing:4px;margin:4px 0 0;color:#ead7e7;text-transform:uppercase}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 22px;font-weight:700;transition:.2s}
+    .btn-primary{background:white;color:var(--purple)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{border:1px solid rgba(255,255,255,.4);color:white}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;padding:55px 0 85px;position:relative;z-index:1}
+    .pill{display:inline-block;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 16px;color:#f3dff0;font-size:14px}
+    .hero h2{font-family:Georgia,serif;font-size:64px;line-height:1.03;margin:18px 0}
+    .hero p{font-size:18px;line-height:1.75;color:#f1dbea;max-width:680px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .quote-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:34px;padding:18px}
+    .quote-inner{background:white;color:var(--text);border-radius:26px;padding:28px;box-shadow:0 22px 60px rgba(0,0,0,.2)}
+    .quote-inner h3{font-size:27px;margin:10px 0}
+    .contact-row{background:var(--lavender);padding:15px;border-radius:18px;margin-top:12px;color:var(--purple);font-weight:700}
+    section{padding:70px 0}
+    .section-title .eyebrow{font-size:13px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--purple)}
+    .section-title h2{font-family:Georgia,serif;font-size:46px;margin:12px 0 14px}
+    .section-title p{color:var(--muted);line-height:1.7;max-width:750px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature,.product,.partner-box{background:white;border-radius:28px;padding:26px;box-shadow:0 15px 35px rgba(59,6,43,.08);border:1px solid #efdcee}
+    .feature h3{margin:14px 0 8px}
+    .feature p{color:var(--muted);line-height:1.6}
+    .filters{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+    .filters button{border:0;border-radius:999px;padding:12px 18px;background:white;color:var(--purple);font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(59,6,43,.08)}
+    .filters button.active{background:var(--purple);color:white}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product{background:linear-gradient(135deg,#fff,#fbf0fb,#fff6fb);transition:.2s}
+    .product:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(59,6,43,.14)}
+    .icon{height:46px;width:46px;border-radius:17px;background:var(--purple);color:white;display:grid;place-items:center;font-size:23px}
+    .product .cat{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-top:16px}
+    .product h3{font-size:22px;margin:8px 0 12px}
+    .product p{color:var(--muted);line-height:1.62}
+    .product ul{padding-left:18px;color:#433743;line-height:1.6}
+    .subtypes{background:#f5e6f4;border-radius:18px;padding:15px;margin-top:16px}
+    .subtypes strong{color:var(--purple)}
+    .price{margin-top:14px;background:white;border-radius:16px;padding:13px;font-size:14px;color:#3c2f38}
+    .partners{background:white}
+    .logos{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:28px}
+    .logo-card{background:var(--lavender);border-radius:24px;min-height:105px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;border:1px solid #eed8eb;font-weight:900;color:var(--purple);font-size:20px}
+    .cta{background:linear-gradient(135deg,var(--purple),var(--purple2));color:white}
+    .cta-grid{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+    footer{background:#140910;color:white;padding:30px 0}
+    footer .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .small{color:#cab6c5;font-size:14px}
+    @media(max-width:920px){
+      .hero,.cta-grid{grid-template-columns:1fr}
+      .hero h2{font-size:46px}
+      .features,.products{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(2,1fr)}
+      nav{gap:16px;align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">RIA</div>
+          <div>
+            <h1>ROSAGONE</h1>
+            <p>Insurance Agency</p>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/254704414422?text=Hello%20Rosagone%20Insurance%20Agency%2C%20I%20would%20like%20to%20get%20an%20insurance%20quote.">Get a Quote</a>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <span class="pill">Protecting You Every Step of the Way</span>
+          <h2>Insurance made simple, personal, and reliable.</h2>
+          <p>Rosagone Insurance Agency helps individuals, families, professionals, and businesses choose the right general and life insurance solutions from trusted insurance partners.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/254704414422?text=Hello%20Rosagone%20Insurance%20Agency%2C%20I%20would%20like%20to%20get%20an%20insurance%20quote.">WhatsApp Us</a>
+            <a class="btn btn-outline" href="mailto:rosagone97@gmail.com">Email Rosagone</a>
+          </div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-inner">
+            <div class="icon">🛡️</div>
+            <h3>Request a personalised quote</h3>
+            <p>Tell us the cover you need and we will compare options from our partner insurers.</p>
+            <div class="contact-row">📞 +254 704 414 422</div>
+            <div class="contact-row">✉️ rosagone97@gmail.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container features">
+      <div class="feature"><div class="icon">✓</div><h3>Trusted insurer options</h3><p>We help you compare products from reputable insurance companies.</p></div>
+      <div class="feature"><div class="icon">✓</div><h3>Clear guidance</h3><p>We explain benefits, requirements, limits, and exclusions before you commit.</p></div>
+      <div class="feature"><div class="icon">✓</div><h3>Covers for every life stage</h3><p>From motor and medical cover to education, savings, family, and retirement plans.</p></div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Our Insurance Products</div>
+        <h2>Find cover that fits your needs</h2>
+        <p>Explore general and life insurance products available through Rosagone Insurance Agency. Prices shown are starting estimates and final premiums depend on insurer terms, risk details, benefits, and policy limits.</p>
+      </div>
+
+      <div class="filters">
+        <button class="active" onclick="filterProducts('all', this)">All</button>
+        <button onclick="filterProducts('general', this)">General Insurance</button>
+        <button onclick="filterProducts('life', this)">Life Insurance</button>
+      </div>
+
+      <div class="products">
+        <article class="product general"><div class="icon">🚗</div><div class="cat">General Insurance</div><h3>Motor Insurance</h3><p>Protection for private, commercial, and PSV vehicles against accidents, theft, fire, and third-party liabilities.</p><ul><li>Legal compliance</li><li>Vehicle and liability protection</li><li>Support after accidents</li></ul><div class="subtypes"><strong>Types:</strong> Third Party, Comprehensive, Commercial Motor</div><div class="price"><strong>Starting from:</strong> KSh 5,000 per year</div></article>
+        <article class="product general"><div class="icon">🏥</div><div class="cat">General Insurance</div><h3>Medical Insurance</h3><p>Health cover for inpatient, outpatient, maternity, dental, optical, and chronic care depending on the selected plan.</p><ul><li>Reduces hospital bills</li><li>Access to quality healthcare</li><li>Protects families and staff</li></ul><div class="subtypes"><strong>Types:</strong> Individual, Family, SME, Corporate Medical</div><div class="price"><strong>Starting from:</strong> KSh 12,000 per year</div></article>
+        <article class="product general"><div class="icon">🏠</div><div class="cat">General Insurance</div><h3>Property / Home Insurance</h3><p>Covers homes, household contents, buildings, and personal property against fire, theft, burglary, and accidental damage.</p><ul><li>Protects your home and valuables</li><li>Reduces loss after fire or burglary</li><li>Suitable for homeowners and tenants</li></ul><div class="subtypes"><strong>Types:</strong> Domestic Package, Homeowners, Tenant’s Contents, Fire & Burglary</div><div class="price"><strong>Starting from:</strong> KSh 3,000 per year</div></article>
+        <article class="product general"><div class="icon">🏢</div><div class="cat">General Insurance</div><h3>Business Insurance</h3><p>Protects businesses from fire, theft, interruption, office risks, shop risks, and other operational losses.</p><ul><li>Protects stock and premises</li><li>Helps business recovery</li><li>Can cover lost profits</li></ul><div class="subtypes"><strong>Types:</strong> Business Combined, Fire, Theft, Business Interruption, Office, Shop</div><div class="price"><strong>Starting from:</strong> KSh 10,000 per year</div></article>
+        <article class="product general"><div class="icon">⚖️</div><div class="cat">General Insurance</div><h3>Liability Insurance</h3><p>Protects against legal claims from third parties for injury, property damage, or product-related losses.</p><ul><li>Helps cover legal claims</li><li>Protects business finances</li><li>Builds client confidence</li></ul><div class="subtypes"><strong>Types:</strong> Public Liability, Employer’s Liability, Product Liability</div><div class="price"><strong>Starting from:</strong> KSh 7,500 per year</div></article>
+        <article class="product general"><div class="icon">💼</div><div class="cat">General Insurance</div><h3>Professional Insurance</h3><p>Covers professionals against claims from errors, omissions, negligence, malpractice, or breach of duty.</p><ul><li>Protects reputation</li><li>Supports legal defense</li><li>Often required for contracts</li></ul><div class="subtypes"><strong>Types:</strong> Professional Indemnity, Medical Malpractice, Errors & Omissions</div><div class="price"><strong>Starting from:</strong> KSh 10,000 per year</div></article>
+        <article class="product general"><div class="icon">👷</div><div class="cat">General Insurance</div><h3>Employee / Workplace Insurance</h3><p>Protects employees against workplace injuries, accidents, disability, or death.</p><ul><li>Supports employees</li><li>Protects employers</li><li>Helps meet obligations</li></ul><div class="subtypes"><strong>Types:</strong> WIBA, Group Personal Accident</div><div class="price"><strong>Starting from:</strong> KSh 7,500 per year</div></article>
+        <article class="product general"><div class="icon">✈️</div><div class="cat">General Insurance</div><h3>Travel Insurance</h3><p>Covers medical emergencies, trip delays, lost luggage, travel accidents, and travel-related risks.</p><ul><li>Protects you away from home</li><li>Useful for visa applications</li><li>Covers emergencies</li></ul><div class="subtypes"><strong>Types:</strong> Local Travel, International Travel, Student Travel</div><div class="price"><strong>Starting from:</strong> KSh 1,500 per trip</div></article>
+        <article class="product general"><div class="icon">🚛</div><div class="cat">General Insurance</div><h3>Marine & Transport Insurance</h3><p>Covers goods while being transported locally or internationally by road, sea, or air.</p><ul><li>Protects cargo</li><li>Supports import/export trade</li><li>Reduces transport risks</li></ul><div class="subtypes"><strong>Types:</strong> Marine Cargo, Goods in Transit, Import / Export Cargo</div><div class="price"><strong>Starting from:</strong> KSh 2,500 per shipment</div></article>
+        <article class="product general"><div class="icon">🌾</div><div class="cat">General Insurance</div><h3>Agricultural Insurance</h3><p>Protects farmers and agribusinesses against crop, livestock, and weather-related production losses.</p><ul><li>Protects farm income</li><li>Supports planning</li><li>Reduces weather losses</li></ul><div class="subtypes"><strong>Types:</strong> Crop, Livestock, Weather Index</div><div class="price"><strong>Starting from:</strong> Custom quotation</div></article>
+        <article class="product general"><div class="icon">💻</div><div class="cat">General Insurance</div><h3>Cyber & Technology Insurance</h3><p>Covers cyber risks, data breaches, electronic equipment damage, and technology-related interruptions.</p><ul><li>Protects digital assets</li><li>Supports recovery</li><li>Useful for online businesses</li></ul><div class="subtypes"><strong>Types:</strong> Cyber Insurance, Electronic Equipment Insurance</div><div class="price"><strong>Starting from:</strong> KSh 15,000 per year</div></article>
+        <article class="product general"><div class="icon">⚡</div><div class="cat">General Insurance</div><h3>Engineering Insurance</h3><p>Covers construction, installation, machinery, and engineering projects against accidental damage.</p><ul><li>Protects contractors</li><li>Covers machinery</li><li>Supports project safety</li></ul><div class="subtypes"><strong>Types:</strong> Contractors All Risk, Plant & Machinery, Erection All Risk</div><div class="price"><strong>Starting from:</strong> Custom quotation</div></article>
+        <article class="product general"><div class="icon">🛡️</div><div class="cat">General Insurance</div><h3>Personal Accident Insurance</h3><p>Provides benefits after accidental injury, disability, or accidental death.</p><ul><li>Financial support after accidents</li><li>Helps during recovery</li><li>Affordable personal protection</li></ul><div class="subtypes"><strong>Types:</strong> Accidental Injury, Disability, Accidental Death</div><div class="price"><strong>Starting from:</strong> KSh 1,500 per year</div></article>
+        <article class="product general"><div class="icon">💎</div><div class="cat">General Insurance</div><h3>Special Risks</h3><p>Specialized covers for financial loss, employee dishonesty, money handling, and political violence risks.</p><ul><li>Protects against serious uncommon losses</li><li>Useful for cash-handling businesses</li><li>Adds extra protection</li></ul><div class="subtypes"><strong>Types:</strong> Fidelity Guarantee, Money Insurance, Political Violence & Terrorism</div><div class="price"><strong>Starting from:</strong> Custom quotation</div></article>
+
+        <article class="product life"><div class="icon">🛡️</div><div class="cat">Life Insurance</div><h3>Term Life Insurance</h3><p>Life cover for a specific period such as 10 or 20 years. Beneficiaries are paid if death occurs during the term.</p><ul><li>Affordable family protection</li><li>Useful during high-responsibility years</li><li>Protects debts and dependants</li></ul><div class="subtypes"><strong>Types:</strong> 10-year, 20-year, family protection term plans</div><div class="price"><strong>Starting from:</strong> KSh 1,000 per month</div></article>
+        <article class="product life"><div class="icon">💎</div><div class="cat">Life Insurance</div><h3>Whole Life Insurance</h3><p>Lifetime protection that pays beneficiaries as long as policy terms are maintained.</p><ul><li>Long-term family protection</li><li>Supports legacy planning</li><li>May build cash value</li></ul><div class="subtypes"><strong>Types:</strong> Lifetime cover, cash value options, limited premium payment</div><div class="price"><strong>Starting from:</strong> KSh 2,000 per month</div></article>
+        <article class="product life"><div class="icon">👨‍👩‍👧</div><div class="cat">Life Insurance</div><h3>Family Life Cover</h3><p>Protection for the main breadwinner, spouse, and children under one family-focused policy.</p><ul><li>Protects the family</li><li>Helps replace income</li><li>Supports dependants</li></ul><div class="subtypes"><strong>Types:</strong> Breadwinner, spouse, and children’s benefits</div><div class="price"><strong>Starting from:</strong> KSh 1,500 per month</div></article>
+        <article class="product life"><div class="icon">🎓</div><div class="cat">Life Insurance</div><h3>Education Policies</h3><p>Savings and protection plans designed to help prepare for children’s school fees and education needs.</p><ul><li>Secures education goals</li><li>Reduces future fee pressure</li><li>May include death/disability benefits</li></ul><div class="subtypes"><strong>Types:</strong> School fees savings, maturity benefits, protection benefits</div><div class="price"><strong>Starting from:</strong> KSh 2,500 per month</div></article>
+        <article class="product life"><div class="icon">💰</div><div class="cat">Life Insurance</div><h3>Endowment Policies</h3><p>A mix of savings, investment, and life cover that pays at maturity or upon death.</p><ul><li>Combines savings and protection</li><li>Funds future goals</li><li>Pays maturity benefit</li></ul><div class="subtypes"><strong>Types:</strong> Savings, investment, life cover, maturity payout</div><div class="price"><strong>Starting from:</strong> KSh 3,000 per month</div></article>
+        <article class="product life"><div class="icon">🧓</div><div class="cat">Life Insurance</div><h3>Pension / Retirement Plans</h3><p>Long-term savings plans that help build income for retirement.</p><ul><li>Builds retirement security</li><li>Encourages saving</li><li>Supports independence later</li></ul><div class="subtypes"><strong>Types:</strong> Individual pension, group retirement, long-term savings</div><div class="price"><strong>Starting from:</strong> KSh 1,000 per month</div></article>
+        <article class="product life"><div class="icon">💳</div><div class="cat">Life Insurance</div><h3>Credit Life Insurance</h3><p>Protects loans by clearing outstanding balances if the insured dies or becomes disabled, depending on terms.</p><ul><li>Protects family from loan burden</li><li>Supports borrowers</li><li>Useful for many loan types</li></ul><div class="subtypes"><strong>Types:</strong> Loan protection, disability options, outstanding balance cover</div><div class="price"><strong>Starting from:</strong> Based on loan amount</div></article>
+        <article class="product life"><div class="icon">💼</div><div class="cat">Life Insurance</div><h3>Group Life Insurance</h3><p>Employer or group-provided life insurance covering employees or members under one policy.</p><ul><li>Supports employee welfare</li><li>Affordable group protection</li><li>Cares for members’ families</li></ul><div class="subtypes"><strong>Types:</strong> Employee life, group member cover, optional riders</div><div class="price"><strong>Starting from:</strong> Custom quotation</div></article>
+        <article class="product life"><div class="icon">🏡</div><div class="cat">Life Insurance</div><h3>Mortgage Protection Insurance</h3><p>Protects home loans so the outstanding mortgage can be cleared if the insured dies or becomes disabled.</p><ul><li>Protects the family home</li><li>Reduces mortgage burden</li><li>Useful for homeowners</li></ul><div class="subtypes"><strong>Types:</strong> Home loan protection, reducing balance cover, disability options</div><div class="price"><strong>Starting from:</strong> Based on mortgage amount</div></article>
+        <article class="product life"><div class="icon">🏥</div><div class="cat">Life Insurance</div><h3>Critical Illness Cover</h3><p>Pays a lump sum if diagnosed with covered serious illnesses such as cancer, stroke, or heart disease.</p><ul><li>Cash support during illness</li><li>Helps treatment costs</li><li>Protects savings</li></ul><div class="subtypes"><strong>Types:</strong> Cancer, stroke, heart disease, other covered illnesses</div><div class="price"><strong>Starting from:</strong> KSh 1,500 per month</div></article>
+        <article class="product life"><div class="icon">💵</div><div class="cat">Life Insurance</div><h3>Income Protection Insurance</h3><p>Pays monthly income if illness or injury prevents you from working.</p><ul><li>Protects monthly income</li><li>Helps cover bills</li><li>Good for self-employed people</li></ul><div class="subtypes"><strong>Types:</strong> Monthly income benefit, illness cover, injury cover</div><div class="price"><strong>Starting from:</strong> Custom quotation</div></article>
+        <article class="product life"><div class="icon">🚨</div><div class="cat">Life Insurance</div><h3>Last Expense / Funeral Cover</h3><p>Provides quick financial support to help families manage funeral and final expense costs.</p><ul><li>Eases funeral cost pressure</li><li>Practical for families in Kenya</li><li>Can cover individual or family</li></ul><div class="subtypes"><strong>Types:</strong> Individual funeral, family funeral, group last expense</div><div class="price"><strong>Starting from:</strong> KSh 500 per month</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners">
+    <div class="container">
+      <div class="section-title">
+        <div class="eyebrow">Affiliated Companies</div>
+        <h2>Trusted insurance partners</h2>
+        <p>We work with reputable insurers to help you compare benefits, premiums, limits, exclusions, and claims support.</p>
+      </div>
+      <div class="logos">
+        <div class="logo-card">CIC</div>
+        <div class="logo-card">Pioneer</div>
+        <div class="logo-card">Britam</div>
+        <div class="logo-card">ICEA Lion</div>
+        <div class="logo-card">Jubilee</div>
+        <div class="logo-card">APA</div>
+        <div class="logo-card">Old Mutual</div>
+        <div class="logo-card">Madison</div>
+        <div class="logo-card">Kenindia</div>
+        <div class="logo-card">GA Insurance</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-grid">
+      <div>
+        <div class="section-title">
+          <div class="eyebrow" style="color:#ead0e6">Ready to get covered?</div>
+          <h2>Talk to Rosagone Insurance Agency today.</h2>
+          <p style="color:#f1dbea">Send us a WhatsApp message with the cover you need, your budget, and the details required for a quick quote.</p>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/254704414422?text=Hello%20Rosagone%20Insurance%20Agency%2C%20I%20would%20like%20to%20get%20an%20insurance%20quote.">Get a Quote →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <strong>ROSAGONE INSURANCE AGENCY</strong>
+      <span class="small">© 2026 Rosagone Insurance Agency. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    function filterProducts(type, button){
+      document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      document.querySelectorAll('.product').forEach(card => {
+        if(type === 'all' || card.classList.contains(type)){
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
